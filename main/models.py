@@ -1,7 +1,12 @@
 from django.db import models
 
-# Create your models here.
-class UserMod(models.Model):
-    user_id = models.BigIntegerField()
-    user_name = models.CharField(max_length=100)
 
+class UserMod(models.Model):
+    pass
+
+    def __str__(self):
+        return ''
+
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = ''
