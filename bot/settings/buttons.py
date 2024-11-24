@@ -2,7 +2,7 @@ from aiogram.types import InlineKeyboardButton,InlineKeyboardMarkup, KeyboardBut
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 
 
-def CreateInline(*button_rows, just=int) -> InlineKeyboardMarkup:
+def CreateInline(*button_rows, just=int) -> InlineKeyboardMarkup: #! {a: a, b: b}
     builder = InlineKeyboardBuilder()
     for row in button_rows:
         for text, callback_data in row.items():
@@ -14,7 +14,7 @@ def CreateInline(*button_rows, just=int) -> InlineKeyboardMarkup:
     return builder.as_markup()
 
 
-def Createreply(*args, contact=False, just=int) -> ReplyKeyboardBuilder:
+def Createreply(*args, contact=False, just=int) -> ReplyKeyboardBuilder: #! 'a', 'b', ..
     bulder = ReplyKeyboardBuilder()
     for i in args:
         bulder.add(KeyboardButton(text=i, request_contact=True if contact else False))
