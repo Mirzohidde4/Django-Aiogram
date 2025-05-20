@@ -3,16 +3,7 @@ from bot.filters.channel import ChannelFilter
 from bot.filters.private_chat import ChatPrivateFilter
 from bot.filters.group import GroupFilter
 from bot.filters.admin import IsBotAdminFilter, IsBotAdminsFilter
-from main.models import AdminMod
-from asgiref.sync import sync_to_async
-
-
-async def get_admin_id():
-    return await sync_to_async(lambda: AdminMod.objects.first())()
-
-async def get_admins_ids():
-    admins = await sync_to_async(lambda: list(AdminMod.objects.all()))()
-    return [admin.user_id for admin in admins]
+from ..utils.functions import get_admin_id, get_admins_ids
 
 
 async def setup_routers() -> Router:
